@@ -56,7 +56,7 @@ window.onload = () => {
         this.obstacleW = 100
         this.obstacleH = 100
         this.obstacleX = canvas.width
-        this.obstacleY = (Math.random()*(canvas.height-100)+50)
+        this.obstacleY = (Math.random()*(canvas.height-150)+50)
         this.obstacleImg = new Image();
         this.obstacleImg.src = "../images/obstacleImg.png"
       }
@@ -77,7 +77,7 @@ window.onload = () => {
         this.ratW = 30
         this.ratH = 25
         this.ratX = (Math.random()*(canvas.width-30))
-        this.ratY = (Math.random()*(canvas.height-75)+50)
+        this.ratY = (Math.random()*(canvas.height-25)+50)
         this.ratImg = new Image();
         this.ratImg.src = "../images/ratImg.png"
       }
@@ -99,7 +99,7 @@ window.onload = () => {
       }else{
         clearInterval(interval);
         alert(`Congratulations, your belly is full \nYou ate ${score} rats`)
-        window.location.href = '/index.html'; 
+        window.location.href = '/game.html'; 
       }
     }, 1000)
 
@@ -126,7 +126,7 @@ window.onload = () => {
       }else{
 
         alert(`You are now in kitten's heaven \nYou ate ${score} rats`)
-        window.location.href = '/index.html'; 
+        window.location.href = '/game.html'; 
         stopDraw()
       }
     }
