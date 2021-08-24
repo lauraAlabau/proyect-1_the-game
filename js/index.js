@@ -22,7 +22,7 @@ window.onload = () => {
         this.playerW = 50
         this.playerH = 50
         this.playerX = (canvas.width/2) - (this.playerW/2)
-        this.playerY = (canvas.height/2) - (this.playerH/2)
+        this.playerY = (canvas.height/2 + 50) - (this.playerH/2)
         this.playerImg = new Image();
         this.playerImg.src = "../images/playerImg.png";
       }
@@ -35,7 +35,7 @@ window.onload = () => {
         this.playerX += (this.playerW/2)
       }
       moveUP(){
-        if(this.playerY > 0)
+        if(this.playerY > 50)
         this.playerY -= (this.playerH/2)
       }
       moveDown(){
@@ -56,7 +56,7 @@ window.onload = () => {
         this.obstacleW = 100
         this.obstacleH = 100
         this.obstacleX = canvas.width
-        this.obstacleY = (Math.random()*(canvas.height-100))
+        this.obstacleY = (Math.random()*(canvas.height-100)+50)
         this.obstacleImg = new Image();
         this.obstacleImg.src = "../images/obstacleImg.png"
       }
@@ -74,10 +74,10 @@ window.onload = () => {
     /* RAT OBJECT */
     class Rat {
       constructor(){
-        this.ratW = 25
+        this.ratW = 30
         this.ratH = 25
-        this.ratX = (Math.random()*(canvas.width-25))
-        this.ratY = (Math.random()*(canvas.height-25))
+        this.ratX = (Math.random()*(canvas.width-30))
+        this.ratY = (Math.random()*(canvas.height-75)+50)
         this.ratImg = new Image();
         this.ratImg.src = "../images/ratImg.png"
       }
@@ -87,17 +87,33 @@ window.onload = () => {
       }
     }
     const ratArray = []
-    setInterval(() => {ratArray.push(new Rat()); console.log(ratArray)}, 5000)
+    setInterval(() => {ratArray.unshift(new Rat()); console.log(ratArray)}, 2000)
     //console.log(ratArray)
 
     
-    /* SCORE */
-    let score = 0
-    setInterval(() => {score ++;}, 1000)
-    const drawScore = (number) =>{
-      ctx.font = "30px arial"
+    /* Time */
+    let time = 30
+    const interval = setInterval(() => {
+      if(time > 0){
+        time --;
+      }else{
+        clearInterval(interval);
+        alert(`Congratulations, your belly is full \nYou ate ${score} rats`)
+        window.location.href = '/index.html'; 
+      }
+    }, 1000)
+
+    const drawtime = (number) =>{
+      ctx.font = "25px arial"; 
       ctx.fillStyle = "white"
-      ctx.fillText(`Score:${number}`, 50, 50)
+      ctx.fillText(`Time :${number}`, 25, 30)
+    }
+    /* Score */
+    let score = 0
+    const drawscore = (number) =>{
+      ctx.font = "25px arial"
+      ctx.fillStyle = "white"
+      ctx.fillText(`Rats eaten:${number}`, 150, 30)
     }
 
     /* CRUSH */
@@ -108,7 +124,10 @@ window.onload = () => {
       const isPlayerAboveToObst = player.playerY + player.playerH < obstacle.obstacleY
       if(isPlayerAtRightToObst || isPlayerAtLeftToObst || isPlayerAtBottomToObst || isPlayerAboveToObst){         
       }else{
-        alert(`GAME OVER \nYOU ATE ${score} RATS` );
+
+        alert(`You are now in kitten's heaven \nYou ate ${score} rats`)
+        window.location.href = '/index.html'; 
+        stopDraw()
       }
     }
     const isPlayerCrashedRat = (player,rat) =>{
@@ -118,7 +137,8 @@ window.onload = () => {
       const isPlayerAboveToRat = player.playerY + player.playerH < rat.ratY
       if(isPlayerAtRightToRat || isPlayerAtLeftToRat || isPlayerAtBottomToRat || isPlayerAboveToRat){         
       }else{
-       // + 1 al score
+        ratArray.splice(new Rat())
+        score+= 1
       }
     }
 
@@ -133,7 +153,8 @@ window.onload = () => {
       const playerUpdate = () =>{
         ctx.clearRect(newPlayer.playerX, newPlayer.playerY, 0, 0)
         newPlayer.drawPlayer()
-        drawScore(score)
+        drawtime(time)
+        drawscore(score)
         requestAnimationFrame(playerUpdate)
       }
       /* Obstacle Dog */
@@ -182,9 +203,7 @@ window.onload = () => {
       }
       playerUpdate()
     })
-    if(ratArray.length > 1){
-      debugger
-    }
+
     
     bgDraw()
     animateRat()
