@@ -124,10 +124,11 @@ window.onload = () => {
       const isPlayerAboveToObst = player.playerY + player.playerH < obstacle.obstacleY
       if(isPlayerAtRightToObst || isPlayerAtLeftToObst || isPlayerAtBottomToObst || isPlayerAboveToObst){         
       }else{
-
+        window.location.href = '../html/looser.html';
+/* 
         alert(`You are now in kitten's heaven \nYou ate ${score} rats`)
         window.location.href = '../html/game.html'; 
-        stopDraw()
+        stopDraw() */
       }
     }
     const isPlayerCrashedRat = (player,rat) =>{
