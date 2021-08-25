@@ -99,7 +99,7 @@ window.onload = () => {
       }else{
         clearInterval(interval);
         alert(`Congratulations, your belly is full \nYou ate ${score} rats`)
-        window.location.href = '/game.html'; 
+        window.location.href = '../html/game.html'; 
       }
     }, 1000)
 
@@ -126,7 +126,7 @@ window.onload = () => {
       }else{
 
         alert(`You are now in kitten's heaven \nYou ate ${score} rats`)
-        window.location.href = '/game.html'; 
+        window.location.href = '../html/game.html'; 
         stopDraw()
       }
     }
