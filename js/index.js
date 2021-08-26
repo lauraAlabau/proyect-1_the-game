@@ -99,7 +99,7 @@ window.onload = () => {
       }else{
         clearInterval(interval);
         //alert(`Congratulations, your belly is full \nYou catch ${score} rats`)
-        window.location.href = '../html/winner.html';
+        window.location.href = `../html/winner.html?score=${score}`
       }
     }, 1000)
 
