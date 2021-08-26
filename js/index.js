@@ -77,7 +77,7 @@ window.onload = () => {
         this.ratW = 30
         this.ratH = 25
         this.ratX = (Math.random()*(canvas.width-30))
-        this.ratY = (Math.random()*(canvas.height-25)+50)
+        this.ratY = (Math.random()*(canvas.height-50)+50)
         this.ratImg = new Image();
         this.ratImg.src = "../images/ratImg.png"
       }
@@ -98,8 +98,8 @@ window.onload = () => {
         time --;
       }else{
         clearInterval(interval);
-        alert(`Congratulations, your belly is full \nYou ate ${score} rats`)
-        window.location.href = '../html/game.html'; 
+        //alert(`Congratulations, your belly is full \nYou catch ${score} rats`)
+        window.location.href = '../html/winner.html';
       }
     }, 1000)
 
@@ -116,7 +116,7 @@ window.onload = () => {
       ctx.fillText(`Rats eaten:${number}`, 150, 30)
     }
 
-    /* CRUSH */
+    /* CRASH */
     const isPlayerCrashedDog = (player,obstacle) =>{
       const isPlayerAtRightToObst = player.playerX > obstacle.obstacleX + obstacle.obstacleW
       const isPlayerAtLeftToObst = player.playerX + player.playerW < obstacle.obstacleX
@@ -124,11 +124,12 @@ window.onload = () => {
       const isPlayerAboveToObst = player.playerY + player.playerH < obstacle.obstacleY
       if(isPlayerAtRightToObst || isPlayerAtLeftToObst || isPlayerAtBottomToObst || isPlayerAboveToObst){         
       }else{
-        window.location.href = '../html/looser.html';
-/* 
+        window.location.href = '../html/loser.html';
+        /*  
         alert(`You are now in kitten's heaven \nYou ate ${score} rats`)
         window.location.href = '../html/game.html'; 
-        stopDraw() */
+        stopDraw()
+        */
       }
     }
     const isPlayerCrashedRat = (player,rat) =>{

@@ -10,20 +10,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+  
   <script type="text/javascript" src="../js/index.js">
   </script>
   <title>Hungry Cat</title>
 
+
 </head>
 <body>
-    <div>
-        <h2 class="button"><a id="re-start-button" href="./game.html">Reload game</a></h2>
-        <h4 class="button"><a id="instruction-button" href="../index.html">Instructions</a></h4>
-        <div class="start-page">
-            <canvas id="canvas" width=700 height=750></canvas>
-        </div> 
-        
-    </div> 
+
+
+    <div id="popupBody">
+      <h2>CONGRATULATIONS</h2>
+      <!-- <a id="cerrar" href="#">&times;</a> -->
+      <hr>
+      <h4>You survived the dogs 
+        and caught <span id="scoreTotal">aaa</span> rats.  
+        You can go to sleep or 
+        try to catch more rats</h4>
+      <div class="popupContent">
+        <hr>
+        <h2 class="button"><a id="start-button" href="./game.html">PLAY AGAIN</a></h2>
+      </div>
+    </div>
+
+
+
+    <script>
+      var scoreValue  = window.location.search;
+      var urlParams = new URLSearchParams(scoreValue);
+      var scoreNumber = urlParams.get('score');
+      //console.log(scoreNumber);
+      var spanScore = document.getElementById("scoreTotal") ;
+      //console.log(spanScore);
+      scoreTotal.innerHTML =  scoreNumber;
+    </script>
+
   <script src="../js/index.js"></script>
   
 
