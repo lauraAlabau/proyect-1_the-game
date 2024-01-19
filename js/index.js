@@ -2,7 +2,7 @@ window.onload = () => {
   //document.getElementById('start-button').onclick = () => {
 
   //}
-
+  const globalSpeed = 2;
   const startGame = () => {
 
     /* CANVAS */
@@ -60,9 +60,11 @@ window.onload = () => {
         this.obstacleImg = new Image();
         this.obstacleImg.src = "../images/obstacleImg.png"
       }
+
       obstacleUpdate() {
-        this.obstacleX -= 5
+        this.obstacleX -= globalSpeed;
       }
+
       drawObstacle() {
         ctx.drawImage(this.obstacleImg, this.obstacleX, this.obstacleY, this.obstacleW, this.obstacleH)
       }
