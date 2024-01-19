@@ -1,29 +1,34 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 body {
   padding: 0;
   text-align: center;
-  background: url("../images/bghtml.png");
+  background: linear-gradient(#78c97188, #78c97188), url("../images/bghtml.png");
+  /* background-color: #79c971; */
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   color: #fff;
-  font-family: 'Press Start 2P';
+  font-family: "Press Start 2P";
   width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-h2{
+h1 {
+  font-size: 3.5rem;
+  margin-top: 40px;
+  text-shadow: -2px 2px 0px #d96154, -4px 4px 0px #b45146;
+}
+h2 {
   font-size: 1.5em;
 }
-h4{
+
+h4 {
   font-size: 1em;
   line-height: 1.8em;
 }
 
-#canvas{
+#canvas {
   padding: 0;
   margin: 100px auto;
   display: block;
@@ -34,59 +39,75 @@ h4{
   right: 0;
 }
 
-.button a{
+#banner {
+  margin-top: 40px;
+  height: 64px;
+  background: transparent url(../images/playerImg.png) space 0 0;
+  background-size: 64px;
+}
+
+.header {
+  color: #f8f5ec;
+  text-shadow: -2px 2px 0px #000000;
+  padding: 20px;
+  background-color: #d96154;
+  border-bottom: 2px solid #3c2015;
+}
+
+.popup-footer {
+  border-top: 2px solid #3c2015;
+  padding-bottom: 20px;
+}
+.button a {
   color: #ff0000;
   text-decoration: none;
-
 }
 
-.button a:hover{
+.button a:hover {
   color: #a00000;
   text-decoration: none;
-
 }
 
-h2.button{
+h2.button {
   margin-top: 30px;
 }
 
 /* POP UP */
 
-.popupContent p{
+.popupContent p {
   font-size: 1em;
+  padding: 20px;
 }
-.text{
+.text {
   margin-top: 30px;
   margin-bottom: 20px;
-
 }
 
 .popupContent h2.button {
   font-size: 2em;
 }
 
-a#start-button{
-
+a#start-button {
   color: #ff0000;
 }
 
-a#start-button:hover{
+a#start-button:hover {
   color: #a00000;
   text-decoration: none;
 }
 
 .dog,
-.rat{
+.rat {
   width: 50px;
   margin: 0 15px;
 }
 
 .arrows,
-.adws{
+.adws {
   width: 100px;
 }
 
-.overlay { 
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -98,20 +119,20 @@ a#start-button:hover{
   opacity: 0;
 }
 
-.overlay:target{
+.overlay:target {
   visibility: visible;
   opacity: 1;
 }
 
-#popupBody{
+#popupBody {
   width: 700px;
-  padding: 2%;
-  border-radius: 15px;
-  box-shadow: 0 0 5px #CCC;
-  background: #FFF;
+  /* padding: 2%; */
+  /* border-radius: 15px; */
+  box-shadow: -4px 4px 0px hsla(25, 37%, 47%, 0.35);
+  background: #f8f1dd;
+  border: 2px solid #3c2015;
   position: relative;
-  margin: 20% auto;
+  margin: 50px auto;
 
   color: #000;
 }
-
