@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="../js/index.js">
-  </script>
-  <title>Kittens</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="../js/index.js"></script>
+    <title>Kittens</title>
+  </head>
+  <body>
+    <header>
+      <div id="banner"></div>
+      <h1 id="game-name">Hungry Cats</h1>
+    </header>
+    <div class="canvas">
+      <div class="canvas-header">
+        <h2>WELCOME TO CAT'S HEAVEN</h2>
+      </div>
+      <div class="canvas-content">
+        <img class="looser" src="../images/deadplayerImg.png" alt="dead-cat" />
+      </div>
 
-</head>
-<body>
-    <div id="popupBody">
-      <h2>WELCOME TO CAT'S HEAVEN</h2>
-      <!-- <a id="cerrar" href="#">&times;</a> -->
-      <img src="../images/deadplayerImg.png" alt="dead-cat">
-      <hr>
-      <div class="popupContent">
-        <h2 class="button"><a id="start-button" href="./game.html">PLAY AGAIN</a></h2>
+      <div class="canvas-footer">
+        <h2 class="button">
+          <a id="start-button" href="./game.html">PLAY AGAIN</a>
+        </h2>
       </div>
     </div>
 
-  <script src="../js/index.js"></script>
-  
-
-</body>
-</html> 
+    <script src="../js/index.js"></script>
+  </body>
+</html>

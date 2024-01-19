@@ -28,17 +28,6 @@ h4 {
   line-height: 1.8em;
 }
 
-#canvas {
-  padding: 0;
-  margin: 100px auto;
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 #banner {
   margin-top: 40px;
   height: 64px;
@@ -46,7 +35,17 @@ h4 {
   background-size: 64px;
 }
 
-.header {
+.canvas {
+  width: 700px;
+  box-shadow: -4px 4px 0px hsla(25, 37%, 47%, 0.35);
+  background: #f8f1dd;
+  border: 2px solid #3c2015;
+  position: relative;
+  margin: 50px auto;
+  color: #000;
+}
+
+.canvas-header {
   color: #f8f5ec;
   text-shadow: -2px 2px 0px #000000;
   padding: 20px;
@@ -54,28 +53,50 @@ h4 {
   border-bottom: 2px solid #3c2015;
 }
 
-.popup-footer {
+.canvas-footer {
   border-top: 2px solid #3c2015;
   padding-bottom: 20px;
 }
-.button a {
-  color: #ff0000;
-  text-decoration: none;
-}
 
-.button a:hover {
-  color: #a00000;
-  text-decoration: none;
-}
-
-h2.button {
+.canvas-footer .button {
   margin-top: 30px;
 }
 
-/* POP UP */
+#action-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 780px;
+  justify-content: space-between;
+  font-size: 1.5rem;
 
-.popupContent p {
+  padding: 0px 20px 20px 20px;
+}
+
+#action-button button {
+  background-color: #f8f5ec;
+  color: #d96154;
+  padding: 10px 20px;
+  text-shadow: -2px 2px 0px hsla(25, 37%, 47%, 0.35);
+  box-shadow: -4px 4px 0px hsla(25, 37%, 47%, 0.35);
+}
+#action-button button:hover {
+  background-color: #d96154;
+  color: #f8f5ec;
+  padding: 10px 20px;
+  box-shadow: -4px 4px 0px hsla(25, 37%, 47%, 0.35);
+}
+
+#action-button div {
+  margin-top: 30px;
+}
+
+.canvas-content p {
   font-size: 1em;
+  padding: 20px;
+}
+
+.canvas-content .looser {
   padding: 20px;
 }
 .text {
@@ -83,7 +104,7 @@ h2.button {
   margin-bottom: 20px;
 }
 
-.popupContent h2.button {
+.canvas-content h2.button {
   font-size: 2em;
 }
 
@@ -124,15 +145,16 @@ a#start-button:hover {
   opacity: 1;
 }
 
-#popupBody {
-  width: 700px;
-  /* padding: 2%; */
-  /* border-radius: 15px; */
+/*GAME*/
+#canvas {
+  padding: 0;
+  margin: 100px auto;
+  display: block;
+  position: absolute;
+  top: 162px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   box-shadow: -4px 4px 0px hsla(25, 37%, 47%, 0.35);
-  background: #f8f1dd;
   border: 2px solid #3c2015;
-  position: relative;
-  margin: 50px auto;
-
-  color: #000;
 }

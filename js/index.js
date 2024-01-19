@@ -117,13 +117,13 @@ window.onload = () => {
     }
 
     /* CRASH */
-      const isPlayerCrashedDog = (player,obstacle) =>{
+    const isPlayerCrashedDog = (player, obstacle) => {
       const isPlayerAtRightToObst = player.playerX > obstacle.obstacleX + obstacle.obstacleW
       const isPlayerAtLeftToObst = player.playerX + player.playerW < obstacle.obstacleX
       const isPlayerAtBottomToObst = player.playerY > obstacle.obstacleY + obstacle.obstacleH
       const isPlayerAboveToObst = player.playerY + player.playerH < obstacle.obstacleY
-      if(isPlayerAtRightToObst || isPlayerAtLeftToObst || isPlayerAtBottomToObst || isPlayerAboveToObst){         
-      }else{
+      if (isPlayerAtRightToObst || isPlayerAtLeftToObst || isPlayerAtBottomToObst || isPlayerAboveToObst) {
+      } else {
         window.location.href = '../html/loser.html';
       }
     }
